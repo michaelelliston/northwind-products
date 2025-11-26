@@ -9,11 +9,14 @@ public class App {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/northwind", "root", "yearup");
             Statement statement = connection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("select * from northwind.products;");
+            ResultSet resultSet = statement.executeQuery("select * from products;");
 
             while (resultSet.next()) {
                 String name = resultSet.getString("ProductName");
-                System.out.println(name);
+                int productID = resultSet.getInt("ProductID");
+                double unitPrice = resultSet.getDouble("UnitPrice");
+                int unitsStocked = resultSet.getInt("UnitsInStock");
+                System.out.printf("%30s | ProductID: %3d | Unit Price: $%.2f | Units Stocked: %3d\n", name, productID, unitPrice, unitsStocked);
             }
 
             connection.close();
