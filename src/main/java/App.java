@@ -48,6 +48,7 @@ public class App {
 
             InputGetter.getString("\nPlease input any character to continue: ");
             System.out.println();
+            connection.close();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -99,6 +100,7 @@ public class App {
 
             InputGetter.getString("\nPlease input any character to continue: ");
             System.out.println();
+            connection.close();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
