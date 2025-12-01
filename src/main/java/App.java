@@ -2,7 +2,6 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import utilities.InputGetter;
 
 import javax.sql.DataSource;
-import javax.xml.transform.Result;
 import java.sql.*;
 
 public class App {
